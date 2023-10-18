@@ -1,0 +1,118 @@
+/*
+Colores
+#F6F1F1     Background
+#EFEFEF     Borders
+#AFD3E2     Active borders
+#19A7CE     Primary
+#146C94     Dark-primary
+#E65831     Complementary
+*/
+
+/* OpenSans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+:root {
+    --main-background-color: #F6F1F1;
+    --main-primary-color: #19A7CE;
+    --main-border-color: #d5d5d5;
+    --main-active-border-color: #AFD3E2;
+    --main-dark-primary-color: #146C94;
+    --main-primary-complementary-color: #E65831;
+    --main-dark-primary-complementary-color: #943c14;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: var(--main-background-color);
+}
+
+h1 {
+    font-weight: 500;
+}
+
+.cancel_button {
+    background-color: var(--main-primary-complementary-color);
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    border-radius: 0.7rem;
+    border: none;
+}
+
+.cancel_button:hover {
+    background-color: var(--main-dark-primary-complementary-color);
+    cursor: pointer;
+}
+
+.save_button {
+    background-color: var(--main-primary-color);
+    padding: 0.5rem 0.75rem;
+    color: #fff;
+    border-radius: 0.7rem;
+    border: none;
+}
+
+.save_button:hover {
+    background-color: var(--main-dark-primary-color);
+    cursor: pointer;
+}
+
+.container {
+    padding: 1rem;
+}
+
+.form_container {
+    padding: 1.7rem;
+    border-radius: 1rem;
+    background-color: #fff;
+}
+
+.center_content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.h_max_screen {
+    height: 100vh;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.border-full {
+    border: 2px solid var(--main-border-color);
+}
+
+.rounded_full {
+    border-radius: 500rem;
+}
+
+.flex {
+    display: flex;
+}
+
+.my-4 {
+    margin-top: 0.7rem;
+    margin-bottom: 0.7rem;
+}
+
+.mt-4 {
+    margin-top: 0.7rem;
+}
+
+.custom_input {
+    border: 2px solid var(--main-border-color);
+    border-radius: 0.7rem;
+    padding: 0.7rem;
+    box-sizing: border-box;
+}
+
+.custom_input:focus {
+    outline: solid 2px var(--main-active-border-color);
+}
