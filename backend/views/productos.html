@@ -5,24 +5,38 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 -->
 <html>
     <head>
-        <title>Agregar una categoria</title>
+        <title>Agregar un producto</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../assets/css/estilos.css">
     </head>
     <body>
-        <div class="h_max_screen center_content">
+        <div class="h_max_screen center_content flex_column">
             <div class="form_container">
                 <h1>Registrar un producto</h1>
                 <form action="POST">
                     <input class="w-full custom_input mt-4" type="text" name="product_name" placeholder="Nombre del producto" /> 
-                    <input class="w-full custom_input my-4" type="number" name="product_price" placeholder="Precio del producto" />
-                    <div class="center_content">
+                    <input class="w-full custom_input mt-4" type="number" name="product_price" placeholder="Precio del producto" />
+                    <div class="mt-4">
+                        <textarea class="w-full custom_input" name="product_description" placeholder="Descripción del producto"></textarea>
+                    </div>
+                    <select class="custom_input w-full mt-4" name="product_category" id="productCategory">
+                        <option value="0">Categoría del producto</option>
+                        <option value="1">Categoría No Funcional 1</option>
+                        <option value="2">Categoría No Funcional 2</option>
+                    </select>
+                    <div class="input_group_1 my-4">
+                        <label for="productImage">Imagen del producto</label>
+                        <input type="file" name="product_image" id="productImage">
+                    </div>
+                    <div class="center_content gap-4">
                         <button type="button" class="cancel_button">Cancelar</button>
                         <button type="submit" class="save_button">Registrar</button>                      
                     </div>
                 </form>
             </div>
+            <small class="mt-4">Tomas Fabrizzio Catalano | 46035457</small>
         </div>
     </body>
+    <script src="../../assets/js/main.js"></script>
 </html>

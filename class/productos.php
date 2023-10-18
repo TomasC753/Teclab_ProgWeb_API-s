@@ -10,12 +10,18 @@ class Producto {
     public $id;
     
     public $name;
+
+    public $description;
+
+    public $image;
     
     public $price;
     
-    public function __construct(string $name, float $price)
+    public function __construct(string $name, float $price, string $image, string $description)
     {
         $this->name = $name;
         $this->price = $price;
+        $this->image = $image;
+        $this->description = $description;
     }
 }
