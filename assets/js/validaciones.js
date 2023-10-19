@@ -79,6 +79,11 @@ $("document").ready(function () {
                 rules: ["required", "numeric", ">-1"]
             }),
             new Field({
+                fieldName: "Descripción del producto",
+                value: productDescription,
+                rules: ["required"]
+            }),
+            new Field({
                 fieldName: "Categoría del producto",
                 value: productCategory,
                 rules: ["required", "id"]
