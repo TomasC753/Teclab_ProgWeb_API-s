@@ -59,7 +59,6 @@ class Validation {
 }
 
 $("document").ready(function () {
-    //
     $("#productSave").click((event) => {
         event.preventDefault();
         let productName = $("#productName").val();
@@ -72,22 +71,22 @@ $("document").ready(function () {
             new Field({
                 fieldName: "Nombre del producto",
                 value: productName,
-                rules: ["required"],
+                rules: ["required"]
             }),
             new Field({
                 fieldName: "Precio del producto",
                 value: productPrice,
-                rules: ["required", "numeric", ">-1"],
+                rules: ["required", "numeric", ">-1"]
             }),
             new Field({
                 fieldName: "Categoría del producto",
                 value: productCategory,
-                rules: ["required", "id"],
+                rules: ["required", "id"]
             }),
             new Field({
                 fieldName: "Imagen del producto",
                 value: productImage,
-                rules: ["required"],
+                rules: ["required"]
             })
         ).validate();
 
@@ -107,7 +106,7 @@ $("document").ready(function () {
             new Field({
                 fieldName: "Nombre de la categoría",
                 value: categoryName,
-                rules: ["required"],
+                rules: ["required"]
             })
         ).validate();
 
