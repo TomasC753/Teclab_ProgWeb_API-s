@@ -12,31 +12,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body>
         <div class="h_max_screen center_content flex_column">
+            <div class="logo">
+                <b>GESTOR</b>
+            </div>
             <div class="form_container">
                 <h1>Registrar un producto</h1>
                 <form action="POST">
-                    <input class="w-full custom_input mt-4" type="text" name="product_name" placeholder="Nombre del producto" /> 
-                    <input class="w-full custom_input mt-4" type="number" name="product_price" placeholder="Precio del producto" />
+                    <input id="productName" class="w-full custom_input mt-4" type="text" name="product_name" placeholder="Nombre del producto" required/> 
+                    <input id="productPrice" class="w-full custom_input mt-4" type="number" name="product_price" placeholder="Precio del producto" required/>
                     <div class="mt-4">
-                        <textarea class="w-full custom_input" name="product_description" placeholder="Descripción del producto"></textarea>
+                        <textarea id="productDescription" class="w-full custom_input" name="product_description" placeholder="Descripción del producto"></textarea>
                     </div>
-                    <select class="custom_input w-full mt-4" name="product_category" id="productCategory">
+                    <select class="custom_input w-full mt-4" name="product_category" id="productCategory" required>
                         <option value="0">Categoría del producto</option>
                         <option value="1">Categoría No Funcional 1</option>
                         <option value="2">Categoría No Funcional 2</option>
                     </select>
                     <div class="input_group_1 my-4">
                         <label for="productImage">Imagen del producto</label>
-                        <input type="file" name="product_image" id="productImage">
+                        <input type="file" name="product_image" id="productImage" required>
                     </div>
                     <div class="center_content gap-4">
                         <button type="button" class="cancel_button">Cancelar</button>
-                        <button type="submit" class="save_button">Guardar</button>                      
+                        <button type="submit" class="save_button" id="productSave">Guardar</button>                      
                     </div>
                 </form>
             </div>
             <small class="mt-4">Tomas Fabrizzio Catalano | 46035457</small>
         </div>
+        <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+        <script type="module" src="../../assets/js/validaciones.js"></script>
+        <script src="../../assets/js/main.js"></script>
     </body>
-    <script src="../../assets/js/main.js"></script>
 </html>
