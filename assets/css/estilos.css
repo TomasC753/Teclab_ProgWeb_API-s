@@ -11,6 +11,9 @@ Colores
 /* OpenSans */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
+/* Balsamiq Sans */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 :root {
     --main-background-color: #F6F1F1;
     --main-primary-color: #19A7CE;
@@ -33,6 +36,12 @@ body {
 
 h1 {
     font-weight: 500;
+}
+
+.logo {
+    font-size: xx-large;
+    margin: 1.2rem 0;
+    color: var(--main-dark-primary-color);
 }
 
 .cancel_button {
