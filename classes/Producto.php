@@ -1,11 +1,15 @@
 <?php
 
-/* 
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/EmptyPHP.php to edit this template
- */
+namespace classes;
 
-class Producto {
+use classes\utils\Model;
+
+/**
+ * @author Tomas Catalano <tcatalano159@gmail.com>
+*/
+class Producto extends Model {
+
+    static protected $table = "products";
     
     public $id;
     
