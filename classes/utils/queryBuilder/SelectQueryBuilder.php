@@ -51,7 +51,10 @@ class SelectQueryBuilder {
     {
         try {
             $query = $this->pdo->prepare($this->getQuery());
-            $values = array_merge($this->where_builder->getValues(), $this->join_builder->values);
+            $values = [];
+            if($this->where_builder->hasWheres()) {
+                $values = array_merge($this->where_builder->getValues(), $this->join_builder->values);
+            }
             $query->execute($values);
             $results = $query->fetchAll(PDO::FETCH_ASSOC);
         return $results;

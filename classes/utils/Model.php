@@ -32,4 +32,8 @@ class Model {
     static public function delete() {
         return (new Database())->delete(self::getTable());
     }
+
+    static public function all() {
+        return (new Database())->select(self::getTable(), ['*'])->execute();
+    }
 }
