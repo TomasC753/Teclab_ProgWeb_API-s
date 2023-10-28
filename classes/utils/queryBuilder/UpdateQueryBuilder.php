@@ -61,8 +61,7 @@ class UpdateQueryBuilder {
     public function execute()
     {
         $query = $this->pdo->prepare($this->getQuery());
-        $values = array_merge($this->values, $this->where_builder->getValues(), $this->join_builder->values);
 
-        return $query->execute($values);
+        return $query->execute($this->values);
     }
 }

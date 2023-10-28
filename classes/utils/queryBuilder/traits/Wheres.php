@@ -5,22 +5,19 @@ namespace classes\utils\queryBuilder\traits;
  * @author Tomas Catalano <tcatalano159@gmail.com>
 */
 class Wheres {
-    public $columns = [];
     /**
      * @var string[]
     */
     public $strings = [];
 
-    public function add(string $column, string $operator)
+    public function add(string $column, string $operator, string $value)
     {
-        $this->strings[] = "$column $operator ?";
-        $this->columns[] = $column;
+        $this->strings[] = "$column $operator $value";
     }
 
     public function addGroup(string $group, array $columns)
     {
         $this->strings[] = "($group)";
-        $this->columns[] = $columns;
     }
 
     public function length()

@@ -8,8 +8,8 @@ use PDO;
  * @author Tomas Catalano <tcatalano159@gmail.com>
 */
 class QueryBuilder {
-    static public function select(string $table, array $columns, PDO $pdo) {
-        return new SelectQueryBuilder($table, $columns, $pdo);
+    static public function select(string $table, array $columns, PDO $pdo, string $model) {
+        return new SelectQueryBuilder($table, $columns, $pdo, $model);
     }
 
     static public function insert(string $table, array $data, PDO $pdo) {

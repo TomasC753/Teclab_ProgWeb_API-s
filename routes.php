@@ -13,7 +13,7 @@ function getRoutes(Router $router) {
     $router->get('/categoria/create', CategoriaController::class, 'create');
     $router->post('/categoria', CategoriaController::class, 'store');
     $router->get('/categoria/edit/[id]', CategoriaController::class, 'edit');
-    $router->put('/categoria/[id]', CategoriaController::class, 'update');
+    $router->post('/categoria/edit/[id]', CategoriaController::class, 'update');
     $router->delete('/categoria/[id]', CategoriaController::class, 'destroy');
 
     $router->get('/product', ProductoController::class, 'index');
@@ -21,7 +21,7 @@ function getRoutes(Router $router) {
     $router->get('/product/create', ProductoController::class, 'create');
     $router->post('/product', ProductoController::class, 'store');
     $router->get('/product/edit/[id]', ProductoController::class, 'edit');
-    $router->put('/product/[id]', ProductoController::class, 'update');
+    $router->post('/product/edit/[id]', ProductoController::class, 'update');
     $router->delete('/product/[id]', ProductoController::class, 'destroy');
 
     return $router;

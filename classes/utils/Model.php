@@ -18,7 +18,8 @@ class Model {
     }
 
     static public function select(array $columns = ['*']) {
-        return (new Database())->select(self::getTable(), $columns);
+        // var_dump("classes\\".self::getTable());
+        return (new Database())->select(self::getTable(), $columns, static::class);
     }
 
     static public function create(array $data) {
@@ -34,6 +35,13 @@ class Model {
     }
 
     static public function all() {
-        return (new Database())->select(self::getTable(), ['*'])->execute();
+        return (new Database())->select(self::getTable(), ['*'], static::class)->execute();
+    }
+
+    static public function find(int $id) {
+        return (new Database())
+            ->select(self::getTable(), ['*'], static::class)
+            ->where('id', '=', $id)
+            ->execute()[0];
     }
 }

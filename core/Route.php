@@ -36,16 +36,48 @@ class Route {
     public function getParams(string $route) : array|null
     {
         try {
+            /**
+             * Separar la ruta coincidente en partes teniendo en cuenta
+             * el símbolo "/"
+            */
             $defined_parts = explode('/', $this->route);
+            /**
+             * Quitar el primer elemento del array resultante ya que
+             * siempre sera vacío
+            */
             array_shift($defined_parts);
+            /**
+             * Agregar "/" al de final de cada parte
+            */
             $defined_parts = array_map(fn($value) => $value."/", $defined_parts);
+            /**
+             * Obtener todos los elementos del array que no coincidan con la
+             * expresión regular de un parámetro en la ruta "/\[.*\]/"
+            */
             $pattern = preg_grep("/\[.*\]/", $defined_parts, PREG_GREP_INVERT);
+            /**
+             * A partir del array anterior donde se reconocen las partes definidas
+             * de la URL, es decir, las partes que no son parámetros,
+             * se procede a removerlos
+            */
             $url = str_replace($pattern, '', $route);
-            
+            /**
+             * A la url resultante, que solo conserva los parametros, se la separa
+             * teniendo en cuenta el simbolo "/"
+            */
             $pre_result = (explode('/', $url));
+            /**
+             * Quitar el primer elemento del array resultante ya que
+             * siempre sera vacío
+            */
             array_shift($pre_result);
-
+            /**
+             * Se procede a combinar las parámetros de la instancia, los keys, y los
+             * parámetros obtenidos de la URL, los valores, en un único array
+             * para que posteriormente sea devuelto por la función
+            */
             $result = array_combine($this->parameters, $pre_result);
+
             return $result;
         } catch(\Throwable $error) {
             return null;

@@ -13,9 +13,9 @@ class Database {
         return $db->init();
     }
 
-    public function select(string $table, array $columns)
+    public function select(string $table, array $columns, string $model)
     {
-        return QueryBuilder::select($table, $columns, self::connect());
+        return QueryBuilder::select($table, $columns, self::connect(), $model);
     }
 
     public function insert(string $table, array $data)

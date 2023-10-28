@@ -16,7 +16,7 @@ class WhereQueryBuilder {
     /**
      * @var mixed[]
     */
-    public $values;
+    // public $values;
 
     function __construct() {
         $this->wheres = new Wheres();
@@ -25,8 +25,7 @@ class WhereQueryBuilder {
 
     public function where($field, $operator, $value)
     {
-        $this->wheres->add($field, $operator);
-        $this->values[] = $value;
+        $this->wheres->add($field, $operator, $value);
         return $this;
     }
 
@@ -34,14 +33,12 @@ class WhereQueryBuilder {
     {
         $query = $callback(new WhereQueryBuilder());
         $this->wheres->addGroup($query->getQuery(), $query->wheres->columns);
-        $this->values = array_merge($this->values, $query->values);
         return $this;
     }
 
     public function orWhere($field, $operator, $value)
     {
-        $this->orWheres->add($field, $operator);
-        $this->values[] = $value;
+        $this->orWheres->add($field, $operator, $value);
         return $this;
     }
 
@@ -49,7 +46,6 @@ class WhereQueryBuilder {
     {
         $query = $callback(new WhereQueryBuilder());
         $this->orWheres->addGroup($query->getQuery(), $query->wheres->columns);
-        $this->values = array_merge($this->values, $query->values);
         return $this;
     }
 
@@ -71,11 +67,5 @@ class WhereQueryBuilder {
         }
 
         return $query;
-    }
-
-    public function getValues() : array
-    {
-        // return $this->flatten([...$this->wheres->values, $this->orWheres->values]);
-        return $this->values;
     }
 }

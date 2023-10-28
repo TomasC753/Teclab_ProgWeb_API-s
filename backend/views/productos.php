@@ -17,16 +17,34 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
             <div class="form_container">
                 <h1>Registrar un producto</h1>
-                <form action="POST">
-                    <input id="productName" class="w-full custom_input mt-4" type="text" name="product_name" placeholder="Nombre del producto" required/> 
-                    <input id="productPrice" class="w-full custom_input mt-4" type="number" name="product_price" placeholder="Precio del producto" required/>
+                <form id="productForm" action="/product<?php if(isset($product)) echo "/edit/{$product->id}" ?>" method="POST" enctype="multipart/form-data">
+                    <input 
+                        id="productName" 
+                        class="w-full custom_input mt-4" 
+                        type="text" name="product_name" 
+                        placeholder="Nombre del producto"
+                        <?php if(isset($product)) echo "value=\"$product->name\"" ?>
+                        required/> 
+                    <input 
+                        id="productPrice" 
+                        class="w-full custom_input mt-4" 
+                        type="number" name="product_price" 
+                        placeholder="Precio del producto"
+                        <?php if(isset($product)) echo "value=\"$product->price\"" ?>
+                        required/>
                     <div class="mt-4">
-                        <textarea id="productDescription" class="w-full custom_input" name="product_description" placeholder="Descripción del producto"></textarea>
+                        <textarea id="productDescription" class="w-full custom_input" name="product_description" placeholder="Descripción del producto"><?php if(isset($product)) echo $product->description ?>
+                        </textarea>
                     </div>
                     <select class="custom_input w-full mt-4" name="product_category" id="productCategory" required>
                         <option value="0">Categoría del producto</option>
-                        <option value="1">Categoría No Funcional 1</option>
-                        <option value="2">Categoría No Funcional 2</option>
+                        <?php foreach($categories as $category) { ?>
+                            <option 
+                            value="<?php echo $category->id ?>" 
+                            <?php if(isset($product) && $category->id == $product->category_id) echo "selected" ?>>
+                                <?php echo $category->name ?>
+                            </option>
+                        <?php } ?>
                     </select>
                     <div class="input_group_1 my-4">
                         <label for="productImage">Imagen del producto</label>

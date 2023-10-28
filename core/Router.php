@@ -22,7 +22,6 @@ class Router {
         $url = "/".($_GET["url"] ?? "");
 
         $route = $this->match($url, $method);
-
         if (is_null($route)) {
             http_response_code(404);
             die();

@@ -10,15 +10,10 @@ class JoinQueryBuilder {
      * @var string[]
     */
     public $joins = [];
-    /**
-     * @var mixed[]
-    */
-    public $values = [];
 
-    public function add(string $table, string $column1, string $operator, string $column2)
+    public function add(string $type, string $table, string $column1, string $operator, string $column2)
     {
-        $this->joins[] = "JOIN $table ON ? $operator ?";
-        $this->values = array_merge($this->values, [$column1, $column2]);
+        $this->joins[] = "$type $table ON $column1 $operator $column2";
     }
 
     public function hasJoins()
@@ -29,10 +24,5 @@ class JoinQueryBuilder {
     public function getQuery() : string
     {
         return implode(" ", $this->joins);
-    }
-
-    public function getValues()
-    {
-        return $this->values;
     }
 }

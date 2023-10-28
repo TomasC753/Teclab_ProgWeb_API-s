@@ -10,13 +10,4 @@ use classes\utils\Model;
 class Categoria extends Model {
 
     static protected $table = 'categories';
-    
-    public $id;
-    
-    public $name;
-    
-    public function __construct(string $name)
-    {
-        $this->name = $name;
-    }
 }
