@@ -10,7 +10,7 @@ class RulesSheet {
     }
 
     numeric(value, rule) {
-        if (rule == 'numeric' && rule != 'numeric') {
+        if (rule != 'numeric' && rule != '') {
             return null;
         }
         if (isNaN(value)) {

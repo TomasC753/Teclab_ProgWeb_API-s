@@ -42,7 +42,7 @@ $("document").ready(function () {
             return;
         }
 
-        alert("Correcto");
+        $('#productForm').submit();
     });
 
     $("#categorySave").click((event) => {
@@ -62,6 +62,6 @@ $("document").ready(function () {
             return;
         }
 
-        alert("Correcto");
+        $('#categoryForm').submit();
     });
 });
