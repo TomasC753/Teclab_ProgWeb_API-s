@@ -143,8 +143,6 @@ h1 {
 .custom_input:focus {
     outline: solid 2px var(--main-active-border-color);
 }
-<<<<<<< Updated upstream
-=======
 
 .custom_table {
     border: 2px solid #cfcfcf;
@@ -243,4 +241,3 @@ h1 {
     color: #969696;
     margin-right: 1.3rem;
 }
->>>>>>> Stashed changes
