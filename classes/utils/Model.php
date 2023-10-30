@@ -18,7 +18,6 @@ class Model {
     }
 
     static public function select(array $columns = ['*']) {
-        // var_dump("classes\\".self::getTable());
         return (new Database())->select(self::getTable(), $columns, static::class);
     }
 
