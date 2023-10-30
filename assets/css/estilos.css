@@ -44,6 +44,7 @@ h1 {
     color: var(--main-dark-primary-color);
 }
 
+
 .cancel_button {
     background-color: var(--main-primary-complementary-color);
     padding: 0.5rem 0.75rem;
@@ -142,3 +143,104 @@ h1 {
 .custom_input:focus {
     outline: solid 2px var(--main-active-border-color);
 }
+<<<<<<< Updated upstream
+=======
+
+.custom_table {
+    border: 2px solid #cfcfcf;
+    border-collapse: collapse;
+}
+
+.custom_table > thead > th {
+    border: 2px solid #cfcfcf;
+    padding: 0.5rem;
+}
+
+.custom_table tbody > tr > td {
+    padding: 0.5rem;
+    text-align: center;
+    border: 2px solid #cfcfcf;
+}
+
+.custom_table__actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+
+.custom_table__actions > a {
+    margin: 0 0.35rem;
+}
+
+.custom_table__actions > .trash_button {
+    color: var(--main-primary-complementary-color);
+}
+
+.custom_table__actions > .view_button {
+    color: var(--main-primary-color);
+}
+
+.custom_table__actions > .edit_button {
+    color: #636363;
+}
+
+#category_table {
+    width: 700px;
+}
+
+.home_container {
+    padding: 2rem 4rem 0 4rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.home__panel {
+    padding: 1rem;
+    background-color: #fff;
+}
+
+.product_item {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.product_item > img {
+    object-fit: contain;
+    width: 9rem;
+    flex: 2;
+}
+
+.product_item > .product__info {
+    flex: 4;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.product__info > .flex {
+    gap: 1rem;
+    align-items: center;
+}
+
+.tag {
+    padding: 0.4rem;
+    background-color: var(--main-primary-color);
+    color: #fff;
+    border-radius: 100px;
+}
+
+.categories_container {
+    margin-top: 1.5rem;
+}
+.category_item {
+    display: flex;
+    align-items: center;
+}
+
+.category_item > b {
+    font-size: 2rem;
+    color: #969696;
+    margin-right: 1.3rem;
+}
+>>>>>>> Stashed changes
